@@ -13,7 +13,7 @@ for x in ${files[@]}; do
 			echo "installing '$x' as $link_name"
 			cd "$USER_BIN"
 			ln -vis "$link_path" "$link_name"
-			chmod u+x "$link_name"
+			chmod -v u+x "$link_name"
 		)
 	fi
 done
