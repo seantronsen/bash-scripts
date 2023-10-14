@@ -10,7 +10,7 @@ for x in ${files[@]}; do
 		link_name="${x::-5}"
 		link_path="$(realpath "$x")"
 		(
-			echo "installing '$x' as $link_name"
+			info "installing '$x' as $link_name"
 			cd "$USER_BIN"
 			ln -vis "$link_path" "$link_name"
 			chmod -v u+x "$link_name"

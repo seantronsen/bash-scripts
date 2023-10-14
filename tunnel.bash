@@ -26,7 +26,7 @@ if [ "$(($# < 2))" == "1" ]; then
 	error "insufficent arguments"
 fi
 
-echo "building tunnel command with verbose output"
+info "building tunnel command with verbose output"
 PORT="$1"
 shift
 cli_args=($@)
@@ -37,5 +37,5 @@ for ((c = 0; c < $#; c++)); do
 	command_str="$command_str ssh $SWITCHES -L $PORT:localhost:$PORT $current_node"
 done
 
-echo "command: $command_str"
+info "command: $command_str"
 eval "${command_str:1}"
