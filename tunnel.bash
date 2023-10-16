@@ -16,7 +16,7 @@
 ################################################################################
 ################################################################################
 
-source lib.bash
+source "$(dirname $(realpath ${BASH_SOURCE[0]}))/lib.bash"
 
 set -e
 SWITCHES=" -v -t "
@@ -38,4 +38,4 @@ for ((c = 0; c < $#; c++)); do
 done
 
 info "command: $command_str"
-eval "${command_str:1}"
+eval "${command_str:1}" | while read -r line; do info "$line"; done

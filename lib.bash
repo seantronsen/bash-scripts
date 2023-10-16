@@ -1,3 +1,3 @@
 #!/bin/bash
 
-source bash-common-lib/lib.bash
+source "$(dirname $(realpath ${BASH_SOURCE[0]}))/bash-common-lib/lib.bash"
