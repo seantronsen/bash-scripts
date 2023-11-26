@@ -30,7 +30,7 @@ SESSION_PATH=$(cat <(fd -d 1 -t d . $COMMON_DIRS) <(echo $COMMON_DIRS | sed 's/ 
 if [ -z "$SESSION_PATH" ]; then
 	error "a selection was not made"
 fi
-SESSION_NAME=$(basename $SESSION_PATH)
+SESSION_NAME=$(basename $SESSION_PATH | sed 's/\./_/g')
 
 # SESSION SPAWN
 if ! tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
